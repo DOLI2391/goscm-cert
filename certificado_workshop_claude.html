@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificado – Workshop IA · GoSCM</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0f0f14;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+    gap: 24px;
+  }
+
+  /* ── CERTIFICATE ──────────────────────────────────────── */
+  .certificate {
+    width: 900px;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  }
+
+  .top-bar {
+    height: 6px;
+    background: linear-gradient(90deg, #1565c0 0%, #1976d2 30%, #5c35c9 65%, #d97f2e 100%);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 52px 24px;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .logos { display: flex; align-items: center; gap: 28px; }
+  .logo-divider { width: 1px; height: 40px; background: #ddd; flex-shrink: 0; }
+  .goscm-logo img { height: 40px; width: auto; display: block; }
+  .claude-logo { display: flex; align-items: center; }
+
+  .cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 20px;
+  }
+  .cert-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: #2563eb;
+    border-radius: 50%;
+  }
+
+  .main {
+    padding: 44px 52px 40px;
+    display: grid;
+    grid-template-columns: 1fr 164px;
+    gap: 44px;
+    align-items: start;
+  }
+
+  .cert-intro {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: #9ca3af; margin-bottom: 10px;
+  }
+
+  .recipient-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px; color: #0f172a; font-weight: 600;
+    line-height: 1.2; margin-bottom: 18px; min-height: 52px;
+    border-bottom: 2.5px solid #2563eb; padding-bottom: 10px;
+    display: inline-block; min-width: 320px;
+    outline: none; cursor: text;
+  }
+  .recipient-name:focus { border-bottom-color: #7c3aed; }
+  .recipient-name.placeholder { color: #9ca3af; font-style: italic; }
+
+  .completion-text {
+    font-size: 13.5px; color: #4b5563; line-height: 1.75;
+    max-width: 520px; margin-bottom: 26px; font-weight: 400;
+  }
+  .completion-text strong { color: #111827; font-weight: 600; }
+
+  .skills-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 34px; }
+  .skill-tag {
+    background: #f3f4f6; color: #374151; font-size: 10.5px;
+    font-weight: 500; padding: 5px 13px; border-radius: 4px; letter-spacing: 0.2px;
+  }
+  .skill-tag.blue { background: #dbeafe; color: #1d4ed8; }
+  .skill-tag.orange { background: #fff3e0; color: #c05000; border: 1px solid #fed7aa; }
+
+  .meta-row { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .meta-label {
+    font-size: 9.5px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #9ca3af; margin-bottom: 3px;
+  }
+  .meta-value { font-size: 13.5px; font-weight: 600; color: #111827; }
+  .meta-sep { width: 1px; height: 30px; background: #e5e7eb; }
+
+  .right-col {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 18px; padding-top: 4px;
+  }
+
+  .qr-wrapper {
+    background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px;
+    padding: 12px; display: flex; flex-direction: column;
+    align-items: center; gap: 8px; width: 138px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  #qrcode canvas, #qrcode img { border-radius: 4px; display: block; }
+
+  .qr-label {
+    font-size: 8.5px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: #9ca3af; text-align: center; line-height: 1.4;
+  }
+  .cert-id { font-size: 8px; color: #d1d5db; font-family: 'Courier New', monospace; text-align: center; }
+
+  /* Signature block */
+  .sig-block { text-align: center; width: 138px; }
+  .sig-line {
+    height: 44px;
+    border-bottom: 1.5px solid #d1d5db;
+    margin-bottom: 6px;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding-bottom: 3px;
+    transition: border-color 0.2s;
+  }
+  .sig-img {
+    max-height: 40px; max-width: 130px;
+    object-fit: contain; display: none;
+    mix-blend-mode: multiply;
+    filter: invert(1) contrast(6) brightness(0.8);
+  }
+  .sig-name { font-size: 12.5px; font-weight: 600; color: #111827; }
+  .sig-role { font-size: 9.5px; color: #9ca3af; letter-spacing: 1px; text-transform: uppercase; margin-top: 1px; }
+
+  .footer {
+    background: #f9fafb; border-top: 1px solid #f3f4f6;
+    padding: 14px 52px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-left { font-size: 10.5px; color: #9ca3af; display: flex; align-items: center; gap: 6px; }
+  .footer-left span.sep { color: #d1d5db; }
+  .verified-row {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10.5px; color: #16a34a; font-weight: 500;
+  }
+  .verified-icon {
+    width: 17px; height: 17px; background: #16a34a; color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 800; flex-shrink: 0;
+  }
+
+  .edit-hint { font-size: 11px; color: #6b7280; margin-top: -14px; margin-bottom: 20px; }
+
+  /* ── CONTROLS ─────────────────────────────────────────── */
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+  .btn {
+    padding: 10px 22px; border-radius: 6px; font-size: 13px;
+    font-family: 'Inter', sans-serif; font-weight: 600; cursor: pointer;
+    border: none; transition: all 0.15s; letter-spacing: 0.3px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-primary { background: #2563eb; color: white; }
+  .btn-primary:hover { background: #1d4ed8; }
+  .btn-secondary { background: rgba(255,255,255,0.08); color: #888; border: 1px solid #333; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.13); color: #ccc; }
+  .btn-green { background: #16a34a; color: white; }
+  .btn-green:hover { background: #15803d; }
+  .btn-file { position: relative; cursor: pointer; }
+  .btn-file input[type=file] {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0; cursor: pointer; font-size: 0;
+  }
+
+  /* ── MODAL ───────────────────────────────────────────── */
+  .modal-overlay {
+    display: none; position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.88); z-index: 1000;
+    overflow-y: auto; padding: 40px 20px;
+  }
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+  .modal-card {
+    background: #1a1a24; border: 1px solid #2a2a38;
+    border-radius: 16px; padding: 40px;
+    max-width: 700px; width: 100%; position: relative;
+  }
+  .modal-title {
+    font-size: 20px; font-weight: 700; color: #f9fafb;
+    margin-bottom: 6px;
+  }
+  .modal-subtitle { font-size: 13px; color: #6b7280; margin-bottom: 32px; }
+  .modal-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; color: #6b7280; cursor: pointer;
+    font-size: 22px; line-height: 1; padding: 4px 10px; border-radius: 6px;
+  }
+  .modal-close:hover { background: #2a2a38; color: #fff; }
+
+  /* Sections */
+  .msection { margin-bottom: 16px; }
+  .msection-header {
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none;
+    padding: 12px 16px; background: #151520;
+    border-radius: 10px; border: 1px solid #2a2a38;
+  }
+  .msection-header:hover { background: #1e1e2e; }
+  .msection-title { font-size: 13px; font-weight: 600; color: #d1d5db; }
+  .msection-arrow { color: #4b5563; font-size: 11px; transition: transform 0.2s; }
+  .msection-arrow.open { transform: rotate(180deg); }
+  .msection-body { padding: 16px 0 4px 0; }
+  .msection-body.hidden { display: none; }
+
+  /* Config inputs */
+  .cfg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .cfg-row.single { grid-template-columns: 1fr; }
+  .cfg-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #6b7280; margin-bottom: 5px; }
+  .cfg-input {
+    width: 100%; background: #0d0d17; border: 1px solid #2a2a38;
+    border-radius: 8px; padding: 10px 14px; font-size: 13px;
+    font-family: 'Inter', sans-serif; color: #d1d5db;
+    outline: none; transition: border-color 0.15s;
+  }
+  .cfg-input:focus { border-color: #3b82f6; }
+  .cfg-hint {
+    background: #0d1117; border: 1px solid #1e3a5f;
+    border-radius: 8px; padding: 14px 16px;
+    font-size: 12px; color: #6b7280; line-height: 1.7;
+    margin-bottom: 14px; margin-top: 14px;
+  }
+  .cfg-hint a { color: #60a5fa; text-decoration: none; }
+  .cfg-hint a:hover { text-decoration: underline; }
+  .cfg-hint code { background: #1e2030; padding: 1px 5px; border-radius: 3px; font-family: monospace; color: #93c5fd; font-size: 11px; }
+
+  /* Upload zone */
+  .upload-zone {
+    border: 2px dashed #2a2a38; border-radius: 10px;
+    padding: 32px; text-align: center; cursor: pointer;
+    transition: all 0.2s; position: relative; margin-top: 14px;
+  }
+  .upload-zone:hover, .upload-zone.drag { border-color: #3b82f6; background: #0d1829; }
+  .upload-zone input {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; opacity: 0; cursor: pointer;
+  }
+  .upload-icon { font-size: 36px; margin-bottom: 10px; }
+  .upload-text { font-size: 13px; color: #6b7280; line-height: 1.6; }
+  .upload-text strong { color: #d1d5db; }
+
+  /* Table */
+  .ptable-wrap {
+    overflow-x: auto; max-height: 240px; overflow-y: auto;
+    border-radius: 8px; border: 1px solid #2a2a38;
+  }
+  .ptable { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .ptable th {
+    background: #151520; color: #6b7280; font-size: 9.5px;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 10px 14px; text-align: left; position: sticky; top: 0;
+  }
+  .ptable td { padding: 10px 14px; color: #d1d5db; border-top: 1px solid #1e2030; }
+  .ptable tr:hover td { background: #151520; }
+
+  .status-dot { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; }
+  .status-dot::before { content: ''; width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .status-dot.pending::before { background: #374151; }
+  .status-dot.sending::before { background: #f59e0b; animation: blink 0.7s infinite; }
+  .status-dot.ok::before { background: #16a34a; }
+  .status-dot.err::before { background: #ef4444; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+  /* Progress */
+  .progress-wrap { margin: 20px 0 4px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: #6b7280; margin-bottom: 8px; }
+  .progress-bar { height: 6px; background: #1e2030; border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, #1976d2, #7c3aed); border-radius: 3px; transition: width 0.4s ease; width: 0%; }
+  .send-summary { font-size: 13px; text-align: center; margin-top: 10px; color: #6b7280; }
+  .send-summary .ok  { color: #16a34a; font-weight: 700; }
+  .send-summary .err { color: #ef4444; font-weight: 700; }
+
+  .modal-actions { display: flex; gap: 12px; margin-top: 24px; }
+  .modal-actions .btn { flex: 1; padding: 12px; font-size: 14px; justify-content: center; }
+  .modal-actions .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .controls, .edit-hint, .modal-overlay { display: none !important; }
+    .certificate { box-shadow: none; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ CERTIFICATE ══════════════════════════════════════ -->
+<div class="certificate" id="certArea">
+  <div class="top-bar"></div>
+
+  <div class="header">
+    <div class="logos">
+      <div class="goscm-logo">
+        <img src="./logo-goscm.png" alt="GoSCM" />
+      </div>
+      <div class="logo-divider"></div>
+      <div class="claude-logo">
+        <img src="./claude-logo.svg" alt="Claude" style="height:34px;width:auto;display:block;" />
+      </div>
+    </div>
+    <div class="cert-badge">Certificado de Participación</div>
+  </div>
+
+  <div class="main">
+    <div class="left-col">
+      <div class="cert-intro">Este certificado se otorga a</div>
+
+      <div
+        class="recipient-name placeholder"
+        contenteditable="true"
+        spellcheck="false"
+        id="recipientName"
+        onfocus="clearPlaceholder(this)"
+        onblur="restorePlaceholder(this)"
+        oninput="updateQR()"
+      >Nombre del Participante</div>
+
+      <div class="edit-hint">✏️ Clic en el nombre para editarlo</div>
+
+      <p class="completion-text">
+        Por haber participado activamente en el workshop
+        <strong>«Introducción al Ecosistema Claude y la Inteligencia Artificial Generativa»</strong>,
+        organizado por <strong>GoSCM</strong>. Durante esta sesión se exploraron herramientas
+        de IA, flujos de trabajo automatizados y estrategias de prompt engineering
+        aplicadas al entorno profesional de Supply Chain.
+      </p>
+
+      <div class="skills-row">
+        <span class="skill-tag blue">Claude.ai</span>
+        <span class="skill-tag blue">Cowork</span>
+        <span class="skill-tag blue">Claude Code</span>
+        <span class="skill-tag orange">Prompt Engineering</span>
+        <span class="skill-tag orange">MCP &amp; Plugins</span>
+        <span class="skill-tag">IA Generativa</span>
+        <span class="skill-tag">Automatización</span>
+        <span class="skill-tag">Supply Chain AI</span>
+      </div>
+
+      <div class="meta-row">
+        <div class="meta-item">
+          <div class="meta-label">Fecha</div>
+          <div class="meta-value">12 de Junio, 2026</div>
+        </div>
+        <div class="meta-sep"></div>
+        <div class="meta-item">
+          <div class="meta-label">Modalidad</div>
+          <div class="meta-value">Presencial</div>
+        </div>
+        <div class="meta-sep"></div>
+        <div class="meta-item">
+          <div class="meta-label">Organización</div>
+          <div class="meta-value">GoSCM</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: QR + Firma -->
+    <div class="right-col">
+      <div class="qr-wrapper">
+        <div id="qrcode"></div>
+        <div class="qr-label">Verificar<br>certificado</div>
+        <div class="cert-id" id="certId">GOSCM-2026-0001</div>
+      </div>
+
+      <div class="sig-block">
+        <div class="sig-line" id="sigLine">
+          <img class="sig-img" id="sigImg" src="" alt="Firma" />
+        </div>
+        <div class="sig-name">Diego Oliva</div>
+        <div class="sig-role">Chief People Officer · GoSCM</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      Escanea el QR para verificar <span class="sep">·</span>
+      ID: <span id="footerCertId">GOSCM-2026-0001</span>
+    </div>
+    <div class="verified-row">
+      <div class="verified-icon">✓</div>
+      Certificado verificable
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTROLS ═════════════════════════════════════════ -->
+<div class="controls">
+  <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimir / Exportar PDF</button>
+  <button class="btn btn-primary" onclick="downloadCertPDF()" style="background:#6366f1">📄 Descargar imagen cert</button>
+  <label class="btn btn-secondary btn-file">
+    🖊️ Subir firma
+    <input type="file" id="sigUpload" accept="image/*" onchange="loadSignature(this)">
+  </label>
+  <button class="btn btn-green" onclick="openModal()">📧 Envío masivo (92)</button>
+</div>
+
+
+<!-- ══ MODAL: ENVÍO MASIVO ══════════════════════════════ -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">📧 Envío masivo de certificados</div>
+    <div class="modal-subtitle">Carga tu lista y envía a cada participante su certificado personalizado con imagen + link de verificación.</div>
+
+    <!-- SECTION 1: Config -->
+    <div class="msection">
+      <div class="msection-header" onclick="toggleSection('cfg')">
+        <div class="msection-title">⚙️ Configuración EmailJS &nbsp;<span id="cfgStatus" style="font-weight:400;font-size:11px;color:#4b5563;">· requerido (solo 1 vez)</span></div>
+        <span class="msection-arrow" id="cfgArrow">▼</span>
+      </div>
+      <div class="msection-body hidden" id="cfgBody">
+        <div class="cfg-hint">
+          Necesitas cuenta gratuita en <a href="https://www.emailjs.com" target="_blank">emailjs.com</a> (200 emails/mes gratis).<br>
+          <strong style="color:#d1d5db;">Pasos rápidos:</strong><br>
+          1. Crea cuenta → <strong>Add Service</strong> → Gmail → autoriza → copia el <code>Service ID</code><br>
+          2. <strong>Email Templates → Create Template</strong>. Usa este HTML en el body:<br>
+          <div style="background:#0a0f1a;border:1px solid #1e3a5f;border-radius:6px;padding:10px 12px;margin:8px 0;font-size:11px;line-height:1.7;white-space:pre-wrap;word-break:break-all;color:#93c5fd;font-family:monospace;">&lt;p&gt;Hola &lt;strong&gt;&#123;&#123;to_name&#125;&#125;&lt;/strong&gt;,&lt;/p&gt;
+&lt;p&gt;¡Felicitaciones! Aquí está tu certificado del &lt;strong&gt;Workshop IA · GoSCM&lt;/strong&gt;.&lt;/p&gt;
+&lt;p style="margin:20px 0;"&gt;
+  &lt;img src="&#123;&#123;cert_image&#125;&#125;" style="max-width:600px;width:100%;border-radius:8px;border:1px solid #e5e7eb;" /&gt;
+&lt;/p&gt;
+&lt;p style="margin:24px 0;display:flex;gap:12px;flex-wrap:wrap;"&gt;
+  &lt;a href="&#123;&#123;cert_link&#125;&#125;" style="background:#16a34a;color:white;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold;"&gt;
+    📄 Descargar mi certificado (PDF)
+  &lt;/a&gt;
+  &lt;a href="&#123;&#123;verify_url&#125;&#125;" style="background:#2563eb;color:white;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold;"&gt;
+    ✅ Verificar certificado
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;p style="color:#6b7280;font-size:13px;"&gt;ID: &lt;code&gt;&#123;&#123;cert_id&#125;&#125;&lt;/code&gt;&lt;/p&gt;</div>
+          3. <strong>Account → General</strong> → copia tu <code>Public Key</code>
+        </div>
+        <div class="cfg-row">
+          <div>
+            <div class="cfg-label">Service ID</div>
+            <input class="cfg-input" id="ejsService" type="text" placeholder="service_xxxxxxx" oninput="saveCfg()">
+          </div>
+          <div>
+            <div class="cfg-label">Template ID</div>
+            <input class="cfg-input" id="ejsTemplate" type="text" placeholder="template_xxxxxxx" oninput="saveCfg()">
+          </div>
+        </div>
+        <div class="cfg-row single">
+          <div>
+            <div class="cfg-label">Public Key</div>
+            <input class="cfg-input" id="ejsKey" type="text" placeholder="Tu public key de EmailJS" oninput="saveCfg()">
+          </div>
+        </div>
+        <div class="cfg-row single">
+          <div>
+            <div class="cfg-label">Asunto del correo</div>
+            <input class="cfg-input" id="ejsSubject" type="text" value="Tu certificado – Workshop IA · GoSCM" oninput="saveCfg()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: CSV -->
+    <div class="msection">
+      <div class="msection-header" onclick="toggleSection('csv')">
+        <div class="msection-title">📋 Lista de participantes &nbsp;<span id="csvCount" style="font-weight:400;font-size:11px;color:#4b5563;"></span></div>
+        <span class="msection-arrow open" id="csvArrow">▼</span>
+      </div>
+      <div class="msection-body" id="csvBody">
+        <div class="upload-zone" id="uploadZone"
+          ondragover="event.preventDefault();this.classList.add('drag')"
+          ondragleave="this.classList.remove('drag')"
+          ondrop="handleDrop(event)">
+          <input type="file" accept=".csv,.txt" id="csvFile" onchange="handleCSV(this)">
+          <div class="upload-icon">📄</div>
+          <div class="upload-text">
+            <strong>Arrastra tu CSV o haz clic para seleccionar</strong><br>
+            Columnas requeridas: <code style="color:#60a5fa;background:#1e2030;padding:1px 5px;border-radius:3px;">nombre</code> y <code style="color:#60a5fa;background:#1e2030;padding:1px 5px;border-radius:3px;">email</code>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:10px;justify-content:flex-end;">
+          <button class="btn btn-secondary" style="font-size:11px;padding:6px 14px;" onclick="downloadTemplate()">⬇ Plantilla CSV</button>
+        </div>
+
+        <div id="tableWrap" style="margin-top:14px;display:none;">
+          <div class="ptable-wrap">
+            <table class="ptable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>ID Certificado</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="ptbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-wrap" id="progressWrap" style="display:none;">
+      <div class="progress-label">
+        <span id="progressText">Enviando...</span>
+        <span id="progressNum">0 / 0</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="send-summary" id="sendSummary"></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+      <button class="btn btn-primary" id="btnSend" onclick="startSending()" disabled>
+        📤 Enviar a todos
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+/* ════════════════════════════════════════════════════════
+   NÓMINA GO IA DAY – 92 participantes (auto-generada)
+════════════════════════════════════════════════════════ */
+const NOMINA_DATA = [
+  {"id":"GOSCM-2026-001","nombre":"Adriano Da Silva","email":"adriano.silva@go-scm.com"},
+  {"id":"GOSCM-2026-002","nombre":"Arthur Machado","email":"arthur.machado@go-scm.com"},
+  {"id":"GOSCM-2026-003","nombre":"Bruno Capuano","email":"bruno.capuano@go-scm.com"},
+  {"id":"GOSCM-2026-004","nombre":"Joao Canella","email":"joao.canella@go-scm.com"},
+  {"id":"GOSCM-2026-005","nombre":"Marcos Lima","email":"marcos.lima@go-scm.com"},
+  {"id":"GOSCM-2026-006","nombre":"Matheus Boa Sorte","email":"matheus.boasorte@go-scm.com"},
+  {"id":"GOSCM-2026-007","nombre":"Murillo Arantes","email":"murillo.arantes@go-scm.com"},
+  {"id":"GOSCM-2026-008","nombre":"Paulo Ramalho","email":"paulo.ramalho@go-scm.com"},
+  {"id":"GOSCM-2026-009","nombre":"Rafael Capitanio","email":"rafael.capitanio@go-scm.com"},
+  {"id":"GOSCM-2026-010","nombre":"Thiago Alcino","email":"thiago.alcino@go-scm.com"},
+  {"id":"GOSCM-2026-011","nombre":"Thiago Araujo","email":"thiago.araujo@go-scm.com"},
+  {"id":"GOSCM-2026-012","nombre":"Abdurahman Hamdy","email":"abdurahman.hamdy@go-scm.com"},
+  {"id":"GOSCM-2026-013","nombre":"Abraham García","email":"abraham.garcia@go-scm.com"},
+  {"id":"GOSCM-2026-014","nombre":"Alicia Valle","email":"alicia.valle@go-scm.com"},
+  {"id":"GOSCM-2026-015","nombre":"Armando Sosa","email":"armando.sosa@go-scm.com"},
+  {"id":"GOSCM-2026-016","nombre":"Bruno Kikuchi","email":"bruno.kikuchi@go-scm.com"},
+  {"id":"GOSCM-2026-017","nombre":"Claudio Cisternas","email":"claudio.cisternas@go-scm.com"},
+  {"id":"GOSCM-2026-018","nombre":"Emilio Cadillo","email":"emilio.cadillo@go-scm.com"},
+  {"id":"GOSCM-2026-019","nombre":"Federico Moreyra","email":"federico.moreyra@go-scm.com"},
+  {"id":"GOSCM-2026-020","nombre":"Felipe Henriquez","email":"felipe.henriquez@go-scm.com"},
+  {"id":"GOSCM-2026-021","nombre":"Felipe Ribertt","email":"felipe.ribertt@go-scm.com"},
+  {"id":"GOSCM-2026-022","nombre":"Geronimo Capurro","email":"geronimo.capurro@go-scm.com"},
+  {"id":"GOSCM-2026-023","nombre":"Jorge Valle","email":"jorge.valle@go-scm.com"},
+  {"id":"GOSCM-2026-024","nombre":"Lorena Guanarita","email":"lorena.guanarita@go-scm.com"},
+  {"id":"GOSCM-2026-025","nombre":"Natalia Finnerty","email":"natalia.finnerty@go-scm.com"},
+  {"id":"GOSCM-2026-026","nombre":"Pablo Rincon","email":"pablo.rincon@go-scm.com"},
+  {"id":"GOSCM-2026-027","nombre":"Paul Hernandez","email":"paul.hernandez@go-scm.com"},
+  {"id":"GOSCM-2026-028","nombre":"Tallyson Alves","email":"tallyson.alves@go-scm.com"},
+  {"id":"GOSCM-2026-029","nombre":"Tatiana Caravatti","email":"tatiana.caravatti@go-scm.com"},
+  {"id":"GOSCM-2026-030","nombre":"Tomas Borzone","email":"tomas.borzone@go-scm.com"},
+  {"id":"GOSCM-2026-031","nombre":"Valeria Nicanovich","email":"valeria.nicanovich@go-scm.com"},
+  {"id":"GOSCM-2026-032","nombre":"Andrea Zapata","email":"andrea.zapata@go-scm.com"},
+  {"id":"GOSCM-2026-033","nombre":"Bautista Delpech","email":"bautista.delpech@go-scm.com"},
+  {"id":"GOSCM-2026-034","nombre":"Caroline Hinostroza","email":"caroline.hinostroza@go-scm.com"},
+  {"id":"GOSCM-2026-035","nombre":"Dayram Afonzo","email":"dayram.afonzo@go-scm.com"},
+  {"id":"GOSCM-2026-036","nombre":"Eliana Ramirez","email":"eliana.ramirez@go-scm.com"},
+  {"id":"GOSCM-2026-037","nombre":"Francisco Espinoza","email":"francisco.espinoza@go-scm.com"},
+  {"id":"GOSCM-2026-038","nombre":"Gabriel Gonzalez","email":"gabriel.gonzalez@go-scm.com"},
+  {"id":"GOSCM-2026-039","nombre":"Gerardo Ahumada","email":"gerardo.ahumada@go-scm.com"},
+  {"id":"GOSCM-2026-040","nombre":"Guillermo Sierra","email":"guillermo.sierra@go-scm.com"},
+  {"id":"GOSCM-2026-041","nombre":"Italo Medina","email":"italo.medina@go-scm.com"},
+  {"id":"GOSCM-2026-042","nombre":"Jhonny Paliza","email":"jhonny.paliza@go-scm.com"},
+  {"id":"GOSCM-2026-043","nombre":"Piero Cervantes","email":"piero.cervantes@go-scm.com"},
+  {"id":"GOSCM-2026-044","nombre":"Rodrigo Acuña","email":"rodrigo.acuna@go-scm.com"},
+  {"id":"GOSCM-2026-045","nombre":"Aelcio Junior","email":"aelcio.junior@go-scm.com"},
+  {"id":"GOSCM-2026-046","nombre":"Agustina Rojas","email":"agustina.rojas@go-scm.com"},
+  {"id":"GOSCM-2026-047","nombre":"Alex Cardona","email":"alex.cardona@go-scm.com"},
+  {"id":"GOSCM-2026-048","nombre":"Alvaro Castro","email":"alvaro.castro@go-scm.com"},
+  {"id":"GOSCM-2026-049","nombre":"Caio Rosa","email":"caio.rosa@go-scm.com"},
+  {"id":"GOSCM-2026-050","nombre":"Carlos Delgado","email":"carlos.delgado@go-scm.com"},
+  {"id":"GOSCM-2026-051","nombre":"Cesar Paul","email":"cesar.paul@go-scm.com"},
+  {"id":"GOSCM-2026-052","nombre":"Constanza Fernandez","email":"constanza.fernandez@go-scm.com"},
+  {"id":"GOSCM-2026-053","nombre":"Daniela Mendez","email":"daniela.mendez@go-scm.com"},
+  {"id":"GOSCM-2026-054","nombre":"Diego Oliva","email":"diego.oliva@go-scm.com"},
+  {"id":"GOSCM-2026-055","nombre":"Diego Rivera","email":"diego.rivera@go-scm.com"},
+  {"id":"GOSCM-2026-056","nombre":"Federico Allende","email":"federico.allende@go-scm.com"},
+  {"id":"GOSCM-2026-057","nombre":"Felipe Bonus","email":"felipe.bonus@go-scm.com"},
+  {"id":"GOSCM-2026-058","nombre":"Felipe Seydewitz","email":"felipe.seydewitz@go-scm.com"},
+  {"id":"GOSCM-2026-059","nombre":"Francisco Dupou","email":"francisco.dupou@go-scm.com"},
+  {"id":"GOSCM-2026-060","nombre":"Geronimo Cornero","email":"geronimo.cornero@go-scm.com"},
+  {"id":"GOSCM-2026-061","nombre":"Giulio Maramarque","email":"giulio.maramarque@go-scm.com"},
+  {"id":"GOSCM-2026-062","nombre":"Guillermo Minicucci","email":"guillermo.d.minicucci@go-scm.com"},
+  {"id":"GOSCM-2026-063","nombre":"Harold Caballero","email":"harold.caballero@go-scm.com"},
+  {"id":"GOSCM-2026-064","nombre":"Hector Contreras","email":"hector.contreras@go-scm.com"},
+  {"id":"GOSCM-2026-065","nombre":"Hector Palacios","email":"hector.palacios@go-scm.com"},
+  {"id":"GOSCM-2026-066","nombre":"Henry Teillery","email":"henry.teillery@go-scm.com"},
+  {"id":"GOSCM-2026-067","nombre":"Iara Coarasa","email":"iara.coarasa@go-scm.com"},
+  {"id":"GOSCM-2026-068","nombre":"Ignacio Sonzini","email":"ignacio.sonzini@go-scm.com"},
+  {"id":"GOSCM-2026-069","nombre":"Javier Prida","email":"javier.prida@go-scm.com"},
+  {"id":"GOSCM-2026-070","nombre":"Juan Michelena","email":"juan.michelena@go-scm.com"},
+  {"id":"GOSCM-2026-071","nombre":"Juan Oyanedel","email":"juan.oyanedel@go-scm.com"},
+  {"id":"GOSCM-2026-072","nombre":"Juan Segundo Cuesta","email":"juan.cuesta@go-scm.com"},
+  {"id":"GOSCM-2026-073","nombre":"Lucas Seimandi","email":"lucas.seimandi@go-scm.com"},
+  {"id":"GOSCM-2026-074","nombre":"Macarena Albertz","email":"macarena.albertz@go-scm.com"},
+  {"id":"GOSCM-2026-075","nombre":"Malena Gonzalez","email":"malena.gonzalez@go-scm.com"},
+  {"id":"GOSCM-2026-076","nombre":"Marcelo Cid","email":"marcelo.cid@go-scm.com"},
+  {"id":"GOSCM-2026-077","nombre":"Martin Cathalifaud","email":"martin.cathalifaud@go-scm.com"},
+  {"id":"GOSCM-2026-078","nombre":"Maximiliano Haquin","email":"maximiliano.haquin@go-scm.com"},
+  {"id":"GOSCM-2026-079","nombre":"Natalia Dirube","email":"natalia.dirube@go-scm.com"},
+  {"id":"GOSCM-2026-080","nombre":"Patricio Donnet","email":"patricio.donnet@go-scm.com"},
+  {"id":"GOSCM-2026-081","nombre":"Reinaldo Gutierrez","email":"reinaldo.gutierrez@go-scm.com"},
+  {"id":"GOSCM-2026-082","nombre":"Roberto Ostuni","email":"roberto.ostuni@go-scm.com"},
+  {"id":"GOSCM-2026-083","nombre":"Rodrigo Troncoso","email":"rodrigo.troncoso@go-scm.com"},
+  {"id":"GOSCM-2026-084","nombre":"Samy AbuEid","email":"samy.abueid@go-scm.com"},
+  {"id":"GOSCM-2026-085","nombre":"Santiago Gay","email":"santiago.gay@go-scm.com"},
+  {"id":"GOSCM-2026-086","nombre":"Sol Suarez","email":"sol.suarez@go-scm.com"},
+  {"id":"GOSCM-2026-087","nombre":"Stephanie Lopez","email":"stephanie.lopez@go-scm.com"},
+  {"id":"GOSCM-2026-088","nombre":"Telma Marquez","email":"telma.marquez@go-scm.com"},
+  {"id":"GOSCM-2026-089","nombre":"Tomas Marticorena","email":"tomas.marticorena@go-scm.com"},
+  {"id":"GOSCM-2026-090","nombre":"Valentina Pigino","email":"valentina.pigino@go-scm.com"},
+  {"id":"GOSCM-2026-091","nombre":"Walter Arrunategui","email":"walter.arrunategui@go-scm.com"},
+  {"id":"GOSCM-2026-092","nombre":"Miguel Lander","email":"miguel.lander@go-scm.com"}
+];
+
+/* ════════════════════════════════════════════════════════
+   CERTIFICATE CORE
+════════════════════════════════════════════════════════ */
+const PLACEHOLDER = 'Nombre del Participante';
+const BASE_URL    = 'https://doli2391.github.io/goscm-cert/validar.html';
+
+function clearPlaceholder(el) {
+  if (el.innerText.trim() === PLACEHOLDER) {
+    el.innerText = '';
+    el.classList.remove('placeholder');
+  }
+}
+
+function restorePlaceholder(el) {
+  if (el.innerText.trim() === '') {
+    el.innerText = PLACEHOLDER;
+    el.classList.add('placeholder');
+  }
+}
+
+function buildQRUrl(name, id) {
+  name = name !== undefined ? name : document.getElementById('recipientName').innerText.trim();
+  id   = id   !== undefined ? id   : document.getElementById('certId').innerText.trim();
+  const n = (name && name !== PLACEHOLDER) ? encodeURIComponent(name) : '';
+  return `${BASE_URL}?id=${id}${n ? '&n=' + n : ''}`;
+}
+
+function renderQR(name, id) {
+  document.getElementById('qrcode').innerHTML = '';
+  new QRCode(document.getElementById('qrcode'), {
+    text: buildQRUrl(name, id),
+    width: 108, height: 108,
+    colorDark: '#1d4ed8', colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+}
+
+function updateQR() { renderQR(); }
+
+function generateNewId() {
+  const num = String(Math.floor(Math.random() * 9000) + 1000);
+  const id  = `GOSCM-2026-${num}`;
+  document.getElementById('certId').innerText = id;
+  document.getElementById('footerCertId').innerText = id;
+  renderQR();
+  return id;
+}
+
+function setParticipant(name, id) {
+  const el = document.getElementById('recipientName');
+  el.innerText = name;
+  el.classList.toggle('placeholder', name === PLACEHOLDER);
+  document.getElementById('certId').innerText = id;
+  document.getElementById('footerCertId').innerText = id;
+  renderQR(name, id);
+}
+
+window.onload = function() {
+  // Auto-load certificate from URL params (?id=GOSCM-2026-XXX&n=Nombre)
+  const params = new URLSearchParams(window.location.search);
+  const urlId  = params.get('id');
+  const urlN   = params.get('n');
+  if (urlId) {
+    // Try to find in NOMINA_DATA first
+    const found = NOMINA_DATA.find(p => p.id === urlId);
+    if (found) {
+      setParticipant(found.nombre, found.id);
+    } else if (urlN) {
+      setParticipant(decodeURIComponent(urlN), urlId);
+    }
+  } else {
+    renderQR();
+  }
+  loadCfg();
+};
+
+
+/* ════════════════════════════════════════════════════════
+   SIGNATURE UPLOAD
+════════════════════════════════════════════════════════ */
+function loadSignature(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img  = document.getElementById('sigImg');
+    const line = document.getElementById('sigLine');
+    img.src          = e.target.result;
+    img.style.display = 'block';
+    line.style.borderBottom = 'none';
+    window._sigData  = e.target.result; // store for batch
+  };
+  reader.readAsDataURL(file);
+}
+
+
+/* ════════════════════════════════════════════════════════
+   MODAL
+════════════════════════════════════════════════════════ */
+function openModal()  { document.getElementById('modal').classList.add('open'); }
+function closeModal() {
+  if (_sending) return; // don't close mid-send
+  document.getElementById('modal').classList.remove('open');
+}
+
+function toggleSection(id) {
+  const body  = document.getElementById(id + 'Body');
+  const arrow = document.getElementById(id + 'Arrow');
+  body.classList.toggle('hidden');
+  arrow.classList.toggle('open');
+}
+
+
+/* ════════════════════════════════════════════════════════
+   CONFIG (sessionStorage so it survives page reload)
+════════════════════════════════════════════════════════ */
+function saveCfg() {
+  try {
+    sessionStorage.setItem('ejsCfg', JSON.stringify({
+      service:  document.getElementById('ejsService').value.trim(),
+      template: document.getElementById('ejsTemplate').value.trim(),
+      key:      document.getElementById('ejsKey').value.trim(),
+      subject:  document.getElementById('ejsSubject').value.trim()
+    }));
+  } catch(e){}
+  updateCfgStatus();
+  updateSendBtn();
+}
+
+function loadCfg() {
+  try {
+    const raw = sessionStorage.getItem('ejsCfg');
+    if (!raw) return;
+    const c = JSON.parse(raw);
+    document.getElementById('ejsService').value  = c.service  || '';
+    document.getElementById('ejsTemplate').value = c.template || '';
+    document.getElementById('ejsKey').value      = c.key      || '';
+    if (c.subject) document.getElementById('ejsSubject').value = c.subject;
+  } catch(e){}
+  updateCfgStatus();
+}
+
+function getCfg() {
+  const s = document.getElementById('ejsService').value.trim();
+  const t = document.getElementById('ejsTemplate').value.trim();
+  const k = document.getElementById('ejsKey').value.trim();
+  return (s && t && k) ? { service: s, template: t, key: k, subject: document.getElementById('ejsSubject').value.trim() } : null;
+}
+
+function updateCfgStatus() {
+  const ok  = !!getCfg();
+  const el  = document.getElementById('cfgStatus');
+  el.textContent = ok ? '· ✅ configurado' : '· requerido (solo 1 vez)';
+  el.style.color  = ok ? '#16a34a' : '#4b5563';
+}
+
+function updateSendBtn() {
+  document.getElementById('btnSend').disabled = _participants.length === 0 || !getCfg();
+}
+
+['ejsService','ejsTemplate','ejsKey'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', updateSendBtn);
+});
+
+
+/* ════════════════════════════════════════════════════════
+   CSV
+════════════════════════════════════════════════════════ */
+let _participants = [];
+
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('uploadZone').classList.remove('drag');
+  const f = e.dataTransfer.files[0];
+  if (f) parseFile(f);
+}
+
+function handleCSV(input) {
+  const f = input.files[0];
+  if (f) parseFile(f);
+}
+
+function parseFile(file) {
+  Papa.parse(file, {
+    header: true,
+    skipEmptyLines: true,
+    complete: results => {
+      const rows    = results.data;
+      const nameKey  = findKey(rows[0], ['nombre','name','Nombre','NAME','participante','Participante']);
+      const emailKey = findKey(rows[0], ['email','correo','Email','EMAIL','Correo','mail','Mail']);
+
+      if (!nameKey || !emailKey) {
+        alert('No encontré columnas "nombre" y "email" en el CSV.\nVerifica que el archivo tenga esas columnas en la primera fila.');
+        return;
+      }
+
+      _participants = rows
+        .filter(r => r[nameKey] && r[emailKey])
+        .map((r, i) => ({
+          nombre: r[nameKey].trim(),
+          email:  r[emailKey].trim(),
+          id:     `GOSCM-2026-${String(1001 + i).padStart(4,'0')}`,
+          status: 'pending'
+        }));
+
+      renderTable();
+      document.getElementById('csvCount').textContent = `· ${_participants.length} participante(s) cargados`;
+      updateSendBtn();
+    },
+    error: err => alert('Error leyendo el CSV: ' + err.message)
+  });
+}
+
+function findKey(obj, candidates) {
+  if (!obj) return null;
+  const keys = Object.keys(obj);
+  for (const c of candidates) {
+    const found = keys.find(k => k.trim().toLowerCase() === c.toLowerCase());
+    if (found) return found;
+  }
+  return null;
+}
+
+function renderTable() {
+  const tbody = document.getElementById('ptbody');
+  tbody.innerHTML = _participants.map((p, i) => `
+    <tr>
+      <td style="color:#4b5563">${i + 1}</td>
+      <td>${escHtml(p.nombre)}</td>
+      <td style="color:#6b7280">${escHtml(p.email)}</td>
+      <td style="font-family:monospace;font-size:11px;color:#4b5563">${p.id}</td>
+      <td><span class="status-dot pending" id="st-${i}">Pendiente</span></td>
+    </tr>`).join('');
+  document.getElementById('tableWrap').style.display = 'block';
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;');
+}
+
+function downloadTemplate() {
+  const csv = 'nombre,email\nAna García,ana@empresa.com\nCarlos López,carlos@empresa.com\nMaría Torres,maria@empresa.com';
+  const a   = Object.assign(document.createElement('a'), {
+    href:     URL.createObjectURL(new Blob([csv], {type:'text/csv'})),
+    download: 'participantes_workshop.csv'
+  });
+  a.click();
+}
+
+
+/* ════════════════════════════════════════════════════════
+   BATCH SEND
+════════════════════════════════════════════════════════ */
+let _sending = false;
+let _sentOk  = 0;
+let _sentErr = 0;
+
+async function startSending() {
+  const cfg = getCfg();
+  if (!cfg)                    { alert('Completa la configuración de EmailJS primero.'); return; }
+  if (_participants.length===0){ alert('Carga una lista de participantes primero.');      return; }
+
+  _sending = true; _sentOk = 0; _sentErr = 0;
+  document.getElementById('btnSend').disabled    = true;
+  document.getElementById('progressWrap').style.display = 'block';
+  document.getElementById('sendSummary').innerHTML = '';
+
+  emailjs.init(cfg.key);
+
+  const total = _participants.length;
+
+  for (let i = 0; i < total; i++) {
+    const p = _participants[i];
+    setStatus(i, 'sending', 'Enviando…');
+    updateProgress(i, total);
+
+    try {
+      // Prepare certificate for this participant
+      setParticipant(p.nombre, p.id);
+      await sleep(400); // let QR and fonts render
+
+      const verifyUrl = buildQRUrl(p.nombre, p.id);
+      const certLink  = `https://doli2391.github.io/goscm-cert/certificado_workshop_claude.html?id=${encodeURIComponent(p.id)}&n=${encodeURIComponent(p.nombre)}`;
+
+      // Capture certificate as image
+      let certImage = '';
+      try { certImage = await captureCert(); } catch(e) { console.warn('captureCert failed:', e); }
+
+      // Send email
+      await emailjs.send(cfg.service, cfg.template, {
+        to_name:    p.nombre,
+        to_email:   p.email,
+        cert_id:    p.id,
+        verify_url: verifyUrl,
+        cert_image: certImage,
+        cert_link:  certLink,
+        subject:    cfg.subject || 'Tu certificado – Workshop IA · GoSCM'
+      });
+
+      _participants[i].status = 'ok';
+      setStatus(i, 'ok', 'Enviado ✓');
+      _sentOk++;
+    } catch(err) {
+      console.error(`Error sending to ${p.email}:`, err);
+      _participants[i].status = 'err';
+      setStatus(i, 'err', 'Error ✕');
+      _sentErr++;
+    }
+
+    updateProgress(i + 1, total);
+    if (i < total - 1) await sleep(1800); // rate limiting
+  }
+
+  // Restore placeholder
+  setParticipant(PLACEHOLDER, 'GOSCM-2026-0001');
+
+  _sending = false;
+  document.getElementById('progressText').textContent = '✅ Completado';
+  const errMsg = _sentErr > 0 ? ` · <span class="err">${_sentErr} con error</span>` : '';
+  document.getElementById('sendSummary').innerHTML =
+    `<span class="ok">${_sentOk} enviado(s) correctamente</span>${errMsg}`;
+  document.getElementById('btnSend').disabled = false;
+}
+
+function setStatus(i, cls, txt) {
+  const el = document.getElementById('st-' + i);
+  if (!el) return;
+  el.className   = 'status-dot ' + cls;
+  el.textContent = txt;
+}
+
+function updateProgress(done, total) {
+  const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+  document.getElementById('progressFill').style.width  = pct + '%';
+  document.getElementById('progressNum').textContent   = `${done} / ${total}`;
+}
+
+async function captureCert() {
+  await document.fonts.ready;
+  const el     = document.getElementById('certArea');
+  const canvas = await html2canvas(el, {
+    scale:           1.0,
+    useCORS:         true,
+    allowTaint:      true,
+    logging:         false,
+    backgroundColor: '#ffffff',
+    width:           el.offsetWidth,
+    height:          el.offsetHeight
+  });
+  // Resize to max 800px wide to keep payload small
+  const maxW   = 800;
+  const ratio  = Math.min(1, maxW / canvas.width);
+  const out    = document.createElement('canvas');
+  out.width    = Math.round(canvas.width  * ratio);
+  out.height   = Math.round(canvas.height * ratio);
+  out.getContext('2d').drawImage(canvas, 0, 0, out.width, out.height);
+  return out.toDataURL('image/jpeg', 0.65);
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function downloadCertPDF() {
+  const btn = event.target;
+  btn.disabled = true;
+  btn.textContent = '⏳ Generando…';
+  try {
+    await document.fonts.ready;
+    const el = document.getElementById('certArea');
+    const canvas = await html2canvas(el, {
+      scale: 2,
+      useCORS: true,
+      allowTaint: true,
+      logging: false,
+      backgroundColor: '#ffffff'
+    });
+    const name = document.getElementById('participantName').textContent.trim().replace(/\s+/g,'_');
+    const link = document.createElement('a');
+    link.download = `certificado_${name}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) {
+    alert('Error al generar imagen: ' + e.message);
+  }
+  btn.disabled = false;
+  btn.textContent = '📄 Descargar imagen cert';
+}
+</script>
+
+</body>
+</html>
