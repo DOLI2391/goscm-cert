@@ -1,920 +1,472 @@
-[
+
   {
-    "id": "GOSCM-2026-001",
-    "nombre": "Adriano Da Silva",
-    "puesto": "Senior Consultant 2",
-    "equipo": "Planning",
-    "email": "adriano.silva@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-002",
-    "nombre": "Arthur Machado",
-    "puesto": "Senior Consultant 1",
-    "equipo": "Planning",
-    "email": "arthur.machado@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-003",
-    "nombre": "Bruno Capuano",
-    "puesto": "Consultant 1",
-    "equipo": "Planning",
-    "email": "bruno.capuano@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-004",
-    "nombre": "Joao Canella",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "joao.canella@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-005",
-    "nombre": "Marcos Lima",
-    "puesto": "Acting Delivery Manager",
-    "equipo": "Planning",
-    "email": "marcos.lima@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-006",
-    "nombre": "Matheus Boa Sorte",
-    "puesto": "Senior Consultant 1",
-    "equipo": "Planning",
-    "email": "matheus.boasorte@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-007",
-    "nombre": "Murillo Arantes",
-    "puesto": "Senior Consultant",
-    "equipo": "Planning",
-    "email": "murillo.arantes@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-008",
-    "nombre": "Paulo Ramalho",
-    "puesto": "Senior Consultant 2",
-    "equipo": "S4",
-    "email": "paulo.ramalho@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-009",
-    "nombre": "Rafael Capitanio",
-    "puesto": "Regional Manager",
-    "equipo": "Planning;#Sales",
-    "email": "rafael.capitanio@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-010",
-    "nombre": "Thiago Alcino",
-    "puesto": "Solution Architect",
-    "equipo": "Planning",
-    "email": "thiago.alcino@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-011",
-    "nombre": "Thiago Araujo",
-    "puesto": "Experienced Consultant 2",
-    "equipo": "Planning",
-    "email": "thiago.araujo@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-012",
-    "nombre": "Abdurahman Hamdy",
-    "puesto": "Junior Consultant",
-    "equipo": "Planning",
-    "email": "abdurahman.hamdy@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-013",
-    "nombre": "Abraham García",
-    "puesto": "Consultant 1",
-    "equipo": "Planning",
-    "email": "abraham.garcia@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-014",
-    "nombre": "Alicia Valle",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "alicia.valle@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-015",
-    "nombre": "Armando Sosa",
-    "puesto": "Experienced Consultant 2",
-    "equipo": "Planning",
-    "email": "armando.sosa@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-016",
-    "nombre": "Bruno Kikuchi",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "bruno.kikuchi@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-017",
-    "nombre": "Claudio Cisternas",
-    "puesto": "CC.SS. Adoption Lead",
-    "equipo": "Planning",
-    "email": "claudio.cisternas@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-018",
-    "nombre": "Emilio Cadillo",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "emilio.cadillo@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-019",
-    "nombre": "Federico Moreyra",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "federico.moreyra@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-020",
-    "nombre": "Felipe Henriquez",
-    "puesto": "CC.SS. Technical Lead",
-    "equipo": "Planning",
-    "email": "felipe.henriquez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-021",
-    "nombre": "Felipe Ribertt",
-    "puesto": "Experienced Consultant 2",
-    "equipo": "Planning",
-    "email": "felipe.ribertt@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-022",
-    "nombre": "Geronimo Capurro",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "geronimo.capurro@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-023",
-    "nombre": "Jorge Valle",
-    "puesto": "Senior Manager",
-    "equipo": "Planning",
-    "email": "jorge.valle@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-024",
-    "nombre": "Lorena Guanarita",
-    "puesto": "Delivery Manager",
-    "equipo": "Planning",
-    "email": "lorena.guanarita@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-025",
-    "nombre": "Natalia Finnerty",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "natalia.finnerty@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-026",
-    "nombre": "Pablo Rincon",
-    "puesto": "Consultant 2",
-    "equipo": "Planning",
-    "email": "pablo.rincon@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-027",
-    "nombre": "Paul Hernandez",
-    "puesto": "Senior Consultant 2",
-    "equipo": "Planning",
-    "email": "paul.hernandez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-028",
-    "nombre": "Tallyson Alves",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "tallyson.alves@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-029",
-    "nombre": "Tatiana Caravatti",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "tatiana.caravatti@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-030",
-    "nombre": "Tomas Borzone",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "tomas.borzone@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-031",
-    "nombre": "Valeria Nicanovich",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
-    "email": "valeria.nicanovich@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-032",
-    "nombre": "Andrea Zapata",
-    "puesto": "Regional Manager",
-    "equipo": "Planning",
-    "email": "andrea.zapata@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-033",
-    "nombre": "Bautista Delpech",
-    "puesto": "Consultant 1",
-    "equipo": "Planning",
-    "email": "bautista.delpech@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-034",
-    "nombre": "Caroline Hinostroza",
-    "puesto": "PMO 2",
-    "equipo": "Planning",
-    "email": "caroline.hinostroza@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-035",
-    "nombre": "Dayram Afonzo",
-    "puesto": "Solution Architect",
-    "equipo": "Planning",
-    "email": "dayram.afonzo@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-036",
-    "nombre": "Eliana Ramirez",
-    "puesto": "Senior Consultant 1",
-    "equipo": "Planning",
-    "email": "eliana.ramirez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-037",
-    "nombre": "Francisco Espinoza",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "francisco.espinoza@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-038",
-    "nombre": "Gabriel Gonzalez",
-    "puesto": "Experienced Analyst",
-    "equipo": "Planning",
-    "email": "gabriel.gonzalez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-039",
+    "id": "GOSCM-2026-1001",
     "nombre": "Gerardo Ahumada",
-    "puesto": "Solution Architect",
-    "equipo": "Planning",
     "email": "gerardo.ahumada@go-scm.com",
     "workshop": "Go IA Day · GoSCM",
     "fecha": "12 Jun 2026",
     "modalidad": "Presencial"
   },
   {
-    "id": "GOSCM-2026-040",
-    "nombre": "Guillermo Sierra",
-    "puesto": "Experienced Consultant 2",
-    "equipo": "Planning",
-    "email": "guillermo.sierra@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-041",
-    "nombre": "Italo Medina",
-    "puesto": "Senior Consultant 2",
-    "equipo": "Planning",
-    "email": "italo.medina@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-042",
-    "nombre": "Jhonny Paliza",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "jhonny.paliza@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-043",
-    "nombre": "Piero Cervantes",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "piero.cervantes@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-044",
-    "nombre": "Rodrigo Acuña",
-    "puesto": "Delivery Manager",
-    "equipo": "Planning",
-    "email": "rodrigo.acuna@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-045",
-    "nombre": "Aelcio Junior",
-    "puesto": "Acting Delivery Manager",
-    "equipo": "Planning",
-    "email": "aelcio.junior@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-046",
-    "nombre": "Agustina Rojas",
-    "puesto": "Experienced Consultant 2",
-    "equipo": "Planning",
-    "email": "agustina.rojas@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-047",
-    "nombre": "Alex Cardona",
-    "puesto": "Sales Manager South Cone",
-    "equipo": "Sales",
-    "email": "alex.cardona@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-048",
-    "nombre": "Alvaro Castro",
-    "puesto": "Solution Architect",
-    "equipo": "Planning",
-    "email": "alvaro.castro@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-049",
-    "nombre": "Caio Rosa",
-    "puesto": "Experienced Consultant 2",
-    "equipo": "Planning",
-    "email": "caio.rosa@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-050",
-    "nombre": "Carlos Delgado",
-    "puesto": "PMO Semi Sr 1",
-    "equipo": "Planning",
-    "email": "carlos.delgado@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-051",
-    "nombre": "Cesar Paul",
-    "puesto": "Experienced Consultant 2",
-    "equipo": "Planning",
-    "email": "cesar.paul@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-052",
-    "nombre": "Constanza Fernandez",
-    "puesto": "Junior Consultant",
-    "equipo": "Planning",
-    "email": "constanza.fernandez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-053",
-    "nombre": "Daniela Mendez",
-    "puesto": "People Specialyst",
-    "equipo": "People",
-    "email": "daniela.mendez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-054",
-    "nombre": "Diego Oliva",
-    "puesto": "Chief People Officer",
-    "equipo": "People",
-    "email": "diego.oliva@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-055",
-    "nombre": "Diego Rivera",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "diego.rivera@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-056",
-    "nombre": "Federico Allende",
-    "puesto": "Business Development Representative",
-    "equipo": "Sales",
-    "email": "federico.allende@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-057",
-    "nombre": "Felipe Bonus",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "felipe.bonus@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-058",
-    "nombre": "Felipe Seydewitz",
-    "puesto": "Chief Executive Officer",
-    "equipo": "Direction",
-    "email": "felipe.seydewitz@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-059",
-    "nombre": "Francisco Dupou",
-    "puesto": "Global Analytics Lead",
-    "equipo": "Administration",
-    "email": "francisco.dupou@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-060",
-    "nombre": "Geronimo Cornero",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "geronimo.cornero@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-061",
-    "nombre": "Giulio Maramarque",
-    "puesto": "Consultant 1",
-    "equipo": "Planning",
-    "email": "giulio.maramarque@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-062",
-    "nombre": "Guillermo Minicucci",
-    "puesto": "Senior Consultant 2",
-    "equipo": "Planning",
-    "email": "guillermo.d.minicucci@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-063",
-    "nombre": "Harold Caballero",
-    "puesto": "Junior Consultant",
-    "equipo": "Planning",
-    "email": "harold.caballero@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-064",
-    "nombre": "Hector Contreras",
-    "puesto": "Architect",
-    "equipo": "Planning",
-    "email": "hector.contreras@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-065",
-    "nombre": "Hector Palacios",
-    "puesto": "Delivery Manager",
-    "equipo": "Planning",
-    "email": "hector.palacios@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-066",
-    "nombre": "Henry Teillery",
-    "puesto": "Delivery Manager",
-    "equipo": "Planning",
-    "email": "henry.teillery@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-067",
-    "nombre": "Iara Coarasa",
-    "puesto": "Human Resource Business Partner",
-    "equipo": "People",
-    "email": "iara.coarasa@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-068",
-    "nombre": "Ignacio Sonzini",
-    "puesto": "Experienced Analyst",
-    "equipo": "Planning",
-    "email": "ignacio.sonzini@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-069",
-    "nombre": "Javier Prida",
-    "puesto": "Administrative",
-    "equipo": "Direction",
-    "email": "javier.prida@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-070",
-    "nombre": "Juan Michelena",
-    "puesto": "Demand Generation Regional Lead",
-    "equipo": "Sales",
-    "email": "juan.michelena@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-071",
-    "nombre": "Juan Oyanedel",
-    "puesto": "Junior Consultant",
-    "equipo": "Planning",
-    "email": "juan.oyanedel@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-072",
-    "nombre": "Juan Segundo Cuesta",
-    "puesto": "Junior Consultant",
-    "equipo": "Planning",
-    "email": "juan.cuesta@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-073",
+    "id": "GOSCM-2026-1002",
     "nombre": "Lucas Seimandi",
-    "puesto": "Experienced Consultant 1",
-    "equipo": "Planning",
     "email": "lucas.seimandi@go-scm.com",
     "workshop": "Go IA Day · GoSCM",
     "fecha": "12 Jun 2026",
     "modalidad": "Presencial"
   },
   {
-    "id": "GOSCM-2026-074",
-    "nombre": "Macarena Albertz",
-    "puesto": "Senior Consultant 1",
-    "equipo": "Planning",
-    "email": "macarena.albertz@go-scm.com",
+    "id": "GOSCM-2026-1003",
+    "nombre": "Alvaro Castro",
+    "email": "alvaro.castro@go-scm.com",
     "workshop": "Go IA Day · GoSCM",
     "fecha": "12 Jun 2026",
     "modalidad": "Presencial"
   },
   {
-    "id": "GOSCM-2026-075",
-    "nombre": "Malena Gonzalez",
-    "puesto": "Experienced Analyst",
-    "equipo": "Planning",
-    "email": "malena.gonzalez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-076",
-    "nombre": "Marcelo Cid",
-    "puesto": "Experienced Consultant 2",
-    "equipo": "Planning",
-    "email": "marcelo.cid@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-077",
+    "id": "GOSCM-2026-1004",
     "nombre": "Martin Cathalifaud",
-    "puesto": "Solution Architect",
-    "equipo": "Planning",
     "email": "martin.cathalifaud@go-scm.com",
     "workshop": "Go IA Day · GoSCM",
     "fecha": "12 Jun 2026",
     "modalidad": "Presencial"
   },
   {
-    "id": "GOSCM-2026-078",
-    "nombre": "Maximiliano Haquin",
-    "puesto": "Consultant 1",
-    "equipo": "Planning",
-    "email": "maximiliano.haquin@go-scm.com",
+    "id": "GOSCM-2026-1005",
+    "nombre": "Emilio Cadillo",
+    "email": "emilio.cadillo@go-scm.com",
     "workshop": "Go IA Day · GoSCM",
     "fecha": "12 Jun 2026",
     "modalidad": "Presencial"
   },
   {
-    "id": "GOSCM-2026-079",
-    "nombre": "Natalia Dirube",
-    "puesto": "Data Analyst 2",
-    "equipo": "Administration",
-    "email": "natalia.dirube@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-080",
-    "nombre": "Patricio Donnet",
-    "puesto": "Senior Consultant 1",
-    "equipo": "Planning",
-    "email": "patricio.donnet@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-081",
-    "nombre": "Reinaldo Gutierrez",
-    "puesto": "Senior Consultant 2",
-    "equipo": "Planning",
-    "email": "reinaldo.gutierrez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-082",
-    "nombre": "Roberto Ostuni",
-    "puesto": "Delivery Manager",
-    "equipo": "Planning",
-    "email": "roberto.ostuni@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-083",
-    "nombre": "Rodrigo Troncoso",
-    "puesto": "Regional Manager",
-    "equipo": "Planning",
-    "email": "rodrigo.troncoso@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-084",
-    "nombre": "Samy AbuEid",
-    "puesto": "Analyst",
-    "equipo": "Planning",
-    "email": "samy.abueid@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-085",
-    "nombre": "Santiago Gay",
-    "puesto": "Experienced Analyst",
-    "equipo": "Planning",
-    "email": "santiago.gay@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-086",
-    "nombre": "Sol Suarez",
-    "puesto": "PMO 1",
-    "equipo": "Planning",
-    "email": "sol.suarez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-087",
-    "nombre": "Stephanie Lopez",
-    "puesto": "Junior Consultant",
-    "equipo": "Planning",
-    "email": "stephanie.lopez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-088",
-    "nombre": "Telma Marquez",
-    "puesto": "Administrative",
-    "equipo": "Administration",
-    "email": "telma.marquez@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-089",
-    "nombre": "Tomas Marticorena",
-    "puesto": "Consultant 2",
-    "equipo": "Planning",
-    "email": "tomas.marticorena@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-090",
-    "nombre": "Valentina Pigino",
-    "puesto": "Experienced Analyst",
-    "equipo": "Planning",
-    "email": "valentina.pigino@go-scm.com",
-    "workshop": "Go IA Day · GoSCM",
-    "fecha": "12 Jun 2026",
-    "modalidad": "Presencial"
-  },
-  {
-    "id": "GOSCM-2026-091",
+    "id": "GOSCM-2026-1006",
     "nombre": "Walter Arrunategui",
-    "puesto": "Delivery Manager",
-    "equipo": "Planning",
     "email": "walter.arrunategui@go-scm.com",
     "workshop": "Go IA Day · GoSCM",
     "fecha": "12 Jun 2026",
     "modalidad": "Presencial"
   },
   {
-    "id": "GOSCM-2026-092",
-    "nombre": "Miguel Lander",
-    "puesto": "Sales VP Manager Americas",
-    "equipo": "Sales",
-    "email": "miguel.lander@go-scm.com",
+    "id": "GOSCM-2026-1007",
+    "nombre": "Patricio Garcia",
+    "email": "patricio.garcia@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1008",
+    "nombre": "Rodrigo Troncoso",
+    "email": "rodrigo.troncoso@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1009",
+    "nombre": "Carlos Delgado",
+    "email": "carlos.delgado@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1010",
+    "nombre": "Bautista Delpech",
+    "email": "bautista.delpech@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1011",
+    "nombre": "Marcelo Cid",
+    "email": "marcelo.cid@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1012",
+    "nombre": "Juan Michelena",
+    "email": "juan.michelena@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1013",
+    "nombre": "Roberto Ostuni",
+    "email": "roberto.ostuni@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1014",
+    "nombre": "Harold Caballero",
+    "email": "harold.caballero@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1015",
+    "nombre": "Adriano Da Silva",
+    "email": "adriano.silva@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1016",
+    "nombre": "Caio Rosa",
+    "email": "caio.rosa@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1017",
+    "nombre": "Ignacio Sonzini",
+    "email": "ignacio.sonzini@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1018",
+    "nombre": "Pablo Rincon",
+    "email": "pablo.rincon@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1019",
+    "nombre": "Tomas Marticorena",
+    "email": "tomas.marticorena@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1020",
+    "nombre": "Italo Medina",
+    "email": "italo.medina@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1021",
+    "nombre": "Alicia Valle",
+    "email": "alicia.valle@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1022",
+    "nombre": "Rodrigo Olguin",
+    "email": "rodrigo.olguin@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1023",
+    "nombre": "Giulio Maramarque",
+    "email": "giulio.maramarque@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1024",
+    "nombre": "Eliana Ramirez",
+    "email": "eliana.ramirez@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1025",
+    "nombre": "Lorena Guanarita",
+    "email": "lorena.guanarita@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1026",
+    "nombre": "Sol Suarez",
+    "email": "sol.suarez@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1027",
+    "nombre": "Rodrigo Acuña",
+    "email": "rodrigo.acuna@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1028",
+    "nombre": "Geronimo Capurro",
+    "email": "geronimo.capurro@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1029",
+    "nombre": "Santiago Gay",
+    "email": "santiago.gay@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1030",
+    "nombre": "Agustina Rojas",
+    "email": "agustina.rojas@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1031",
+    "nombre": "Constanza Fernandez",
+    "email": "constanza.fernandez@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1032",
+    "nombre": "Paulo Ramalho",
+    "email": "paulo.ramalho@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1033",
+    "nombre": "Andrea Zapata",
+    "email": "andrea.zapata@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1034",
+    "nombre": "Henry Teillery",
+    "email": "henry.teillery@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1035",
+    "nombre": "Telma Marquez",
+    "email": "telma.marquez@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1036",
+    "nombre": "Armando Sosa",
+    "email": "armando.sosa@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1037",
+    "nombre": "Joao Canella",
+    "email": "joao.canella@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1038",
+    "nombre": "Guillermo Minicucci",
+    "email": "guillermo.d.minicucci@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1039",
+    "nombre": "Murillo Arantes",
+    "email": "murillo.arantes@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1040",
+    "nombre": "Federico Moreyra",
+    "email": "federico.moreyra@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1041",
+    "nombre": "Valeria Nicanovich",
+    "email": "valeria.nicanovich@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1042",
+    "nombre": "Claudio Cisternas",
+    "email": "claudio.cisternas@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1043",
+    "nombre": "Diego Rivera",
+    "email": "diego.rivera@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1044",
+    "nombre": "Tomas Borzone",
+    "email": "tomas.borzone@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1045",
+    "nombre": "Tatiana Caravatti",
+    "email": "tatiana.caravatti@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1046",
+    "nombre": "Valentina Pigino",
+    "email": "valentina.pigino@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1047",
+    "nombre": "Federico Allende",
+    "email": "federico.allende@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1048",
+    "nombre": "Guillermo Sierra",
+    "email": "guillermo.sierra@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1049",
+    "nombre": "Piero Cervantes",
+    "email": "piero.cervantes@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1050",
+    "nombre": "Thiago Araujo",
+    "email": "thiago.araujo@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1051",
+    "nombre": "Felipe Henriquez",
+    "email": "felipe.henriquez@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1052",
+    "nombre": "Stephanie Lopez",
+    "email": "stephanie.lopez@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1053",
+    "nombre": "Geronimo Cornero",
+    "email": "geronimo.cornero@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1054",
+    "nombre": "Cesar Paul",
+    "email": "cesar.paul@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1055",
+    "nombre": "Gabriel Gonzalez",
+    "email": "gabriel.gonzalez@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1056",
+    "nombre": "Francisco Dupou",
+    "email": "francisco.dupou@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1057",
+    "nombre": "Malena Gonzalez",
+    "email": "malena.gonzalez@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1058",
+    "nombre": "Iara Coarasa",
+    "email": "iara.coarasa@go-scm.com",
+    "workshop": "Go IA Day · GoSCM",
+    "fecha": "12 Jun 2026",
+    "modalidad": "Presencial"
+  },
+  {
+    "id": "GOSCM-2026-1059",
+    "nombre": "Maximiliano Haquin",
+    "email": "maximiliano.haquin@go-scm.com",
     "workshop": "Go IA Day · GoSCM",
     "fecha": "12 Jun 2026",
     "modalidad": "Presencial"
